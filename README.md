@@ -3,6 +3,7 @@
 A sqlite driver for [marv](https://www.npmjs.com/package/marv)
 
 ## Usage
+
 ```
 migrations/
   |- 001.create-table.sql
@@ -34,6 +35,7 @@ marv.scan(directory, (err, migrations) => {
 ```
 
 ## Testing
+
 ```bash
 npm install # or yarn
 npm test

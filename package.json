@@ -6,7 +6,8 @@
   "scripts": {
     "lint": "eslint .",
     "test": "node test/suite.js",
-    "prepush": "npm run lint && npm test"
+    "prepush": "npm run lint && npm test",
+    "demo": "cross-env DEBUG='demo' node demo.js"
   },
   "keywords": [
     "marv",
@@ -32,6 +33,7 @@
     "marv": "^2.1.0"
   },
   "devDependencies": {
+    "cross-env": "^5.2.0",
     "eslint": "^5.16.0",
     "eslint-config-imperative": "^2.1.0",
     "eslint-plugin-imperative": "^2.1.0",
