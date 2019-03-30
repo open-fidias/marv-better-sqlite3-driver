@@ -1,0 +1,6 @@
+{
+    "extends": "imperative",
+    "parserOptions": {
+        "ecmaVersion": 2018
+    }
+}
