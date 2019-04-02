@@ -6,8 +6,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "node test/suite.js",
-    "prepush": "npm run lint && npm test",
-    "demo": "cross-env DEBUG='demo' node demo.js"
+    "prepush": "npm run lint && npm test"
   },
   "keywords": [
     "marv",
@@ -40,6 +39,7 @@
     "hath": "^1.0.1",
     "hath-assert": "^0.2.0",
     "hath-report-spec": "^0.1.0",
-    "marv-compliance-tests": "^2.0.0"
+    "marv-compliance-tests": "^2.0.0",
+    "nyc": "^13.3.0"
   }
 }

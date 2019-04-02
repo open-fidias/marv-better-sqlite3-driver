@@ -32,15 +32,41 @@ module.exports = function(options) {
         migrationClient = new sqlite3(path, options)
         userClient = new sqlite3(path, options)
         debug('Connecting to %s', getLoggableUrl())
-        cb(null)
+        attachDatabases(cb)
     }
 
     function disconnect(cb) {
         debug('Disconnecting from %s', getLoggableUrl())
+        detachDatabases()
         lockClient.close(),
         migrationClient.close(),
         userClient.close()
-        cb(null)
+        cb()
+    }
+
+    function attachDatabases(cb) {
+        const { databases } = config.connection
+        if (databases && _.isArray(databases)) {
+            for (let db of databases) {
+                const { path, as } = db
+                userClient.exec(`ATTACH DATABASE '${path}' as "${as}";`)
+            }
+        }
+        cb()
+    }
+
+    function detachDatabases(cb) {
+        const { databases } = config.connection
+        if (databases && _.isArray(databases)) {
+            for (let db of databases) {
+                const { as } = db
+                userClient.exec(`DETACH DATABASE "${as}";`)
+            }
+        }
+
+        if (cb) {
+            cb()
+        }
     }
 
     function dropMigrations(cb) {

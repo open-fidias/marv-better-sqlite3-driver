@@ -17,8 +17,23 @@ function setup(t, done) {
         }
     }
     t.locals.config = config
+    t.locals.configAttachDb = {
+        connection: {
+            path: 'main.sqlite',
+            options: {
+                memory: false
+            },
+            databases: [
+                {
+                    path: 'aux.sqlite',
+                    as: 'aux'
+                }
+            ]
+        }
+    }
     t.locals.driver = driver(config)
     t.locals.driver2 = driver(config)
+    t.locals.driverAttachDb = driver(t.locals.configAttachDb)
     t.locals.migrations = {
         simple: {
             level: 1,
@@ -76,7 +91,6 @@ function setup(t, done) {
             checksum: '401f1b790bf394cf6493425c1d7e33b0'
         }
     }
-    // t.locals.migration = t.locals.migrations.simple
     done()
 }
 

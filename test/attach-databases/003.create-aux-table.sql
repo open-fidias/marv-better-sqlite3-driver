@@ -1,0 +1,9 @@
+BEGIN TRANSACTION;
+CREATE TABLE aux.baz (
+    id INTEGER PRIMARY KEY,
+    value REAL NOT NULL
+);
+INSERT INTO baz (id, value) VALUES (1, 100.0);
+INSERT INTO baz (id, value) VALUES (2, 150.0);
+INSERT INTO baz (id, value) VALUES (3, 200.0);
+COMMIT;
