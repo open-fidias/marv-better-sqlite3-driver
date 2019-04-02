@@ -1,6 +1,6 @@
 {
   "name": "@open-fidias/marv-better-sqlite3-driver",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A sqlite marv driver implementation using better-sqlite3",
   "main": "index.js",
   "scripts": {
