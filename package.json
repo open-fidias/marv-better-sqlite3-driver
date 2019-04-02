@@ -41,5 +41,8 @@
     "hath-report-spec": "^0.1.0",
     "marv-compliance-tests": "^2.0.0",
     "nyc": "^13.3.0"
+  },
+  "engines": {
+    "node": ">8"
   }
 }
