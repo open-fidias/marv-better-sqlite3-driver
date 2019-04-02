@@ -1,6 +1,7 @@
 # marv-better-sqlite3-driver
 
-A sqlite driver for [marv](https://www.npmjs.com/package/marv)
+A sqlite driver for [marv](https://www.npmjs.com/package/marv) using
+[better-sqlite3](https://github.com/JoshuaWise/better-sqlite3).
 
 ## Usage
 
@@ -31,6 +32,22 @@ marv.scan(directory, (err, migrations) => {
     marv.migrate(migrations, driver, (err) => {
         if (err) throw err
     })
+})
+```
+
+## Attach Databases
+
+```js
+const driver = sqliteDriver({
+    connection: {
+        path: 'app.sqlite',
+        databases: [
+            {
+                path: 'aux.sqlite',
+                as: 'aux'
+            }
+        ]
+    }
 })
 ```
 
