@@ -6,6 +6,12 @@ A sqlite driver for [marv](https://www.npmjs.com/package/marv) using
 [![Travis (.org)](https://img.shields.io/travis/open-fidias/marv-better-sqlite3-driver.svg?style=for-the-badge)](https://travis-ci.com/open-fidias/marv-better-sqlite3-driver)&nbsp;
 [![npm (scoped)](https://img.shields.io/npm/v/@open-fidias/marv-better-sqlite3-driver.svg?style=for-the-badge)](https://www.npmjs.com/package/@open-fidias/marv-better-sqlite3-driver)
 
+## Install
+
+```bash
+npm install --save marv @open-fidias/marv-better-sqlite3-driver
+```
+
 ## Usage
 
 ```
