@@ -3,7 +3,6 @@ const fs = require('fs')
 const path = require('path')
 const _ = require('lodash')
 const debug = require('debug')('marv:better-sqlite3-driver')
-const marv = require('marv')
 const pkg = require('./package.json')
 const format = require('util').format
 const supportedDirectives = ['audit', 'comment', 'skip']
