@@ -126,8 +126,8 @@ module.exports = function(options) {
         }
     }
 
-    function runMigration(_migration, cb) {
-        var migration = _.merge({}, _migration, { directives: marv.parseDirectives(_migration.script) })
+    function runMigration(migration, cb) {
+        _.defaults(migration, { directives: {}  });
 
         checkDirectives(migration.directives)
 
