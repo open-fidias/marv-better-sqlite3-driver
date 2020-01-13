@@ -3,7 +3,6 @@ const fs = require('fs')
 const path = require('path')
 const _ = require('lodash')
 const debug = require('debug')('marv:better-sqlite3-driver')
-const marv = require('marv')
 const pkg = require('./package.json')
 const format = require('util').format
 const supportedDirectives = ['audit', 'comment', 'skip']
@@ -126,8 +125,8 @@ module.exports = function(options) {
         }
     }
 
-    function runMigration(_migration, cb) {
-        var migration = _.merge({}, _migration, { directives: marv.parseDirectives(_migration.script) })
+    function runMigration(migration, cb) {
+        _.defaults(migration, { directives: {}  });
 
         checkDirectives(migration.directives)
 
